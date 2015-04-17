@@ -3,7 +3,7 @@ Service Workers Push API Hands-on
 
 Windows
 -------
-`push.ps1` を開き API_KEY と SUBSCRIPTION_ID を適切に入力し、 `push.cmd` を実行する。
+`push.cmd` を開き API_KEY と SUBSCRIPTION_ID を適切に入力し、実行する。
 
 Mac or Linux
 ------------
