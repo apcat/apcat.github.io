@@ -20,7 +20,7 @@ self.addEventListener("push", function (event) {
       body: [
         "都市: " + data.name.split("-")[0],
         "天気: " + data.weather[0].main,
-        "気温: " + Math.floor(data.main.temp - 273.15) + "℃"
+        "気温: " + Math.round(data.main.temp - 273.15) + "℃"
       ].join("\n"),
       icon: "html5.png",
       tag: "earthquake"
