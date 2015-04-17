@@ -1,0 +1,13 @@
+{
+  "name": "push test",
+  "short_name": "push!",
+  "icons": [{
+    "src": "html5.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "849903130382",
+  "gcm_user_visible_only": true
+}
