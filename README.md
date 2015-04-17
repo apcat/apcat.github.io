@@ -1,6 +1,14 @@
 Service Workers Push API Hands-on
 =================================
 
+[発表資料](https://speakerdeck.com/ww24/service-workers-push-api-hands-on)
+
+manifest.json
+-------------
+`gcm_sender_id` は適切な値に書き換える。
+
+localhost でテストする限りに於いては変更する必要なし。
+
 Windows
 -------
 `push.cmd` を開き API_KEY と SUBSCRIPTION_ID を適切に入力し、実行する。
