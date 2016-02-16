@@ -3,6 +3,11 @@
  */
 
 $(function () {
+  if (location.protocol !== "https:") {
+    location.protocol = "https:";
+    return;
+  }
+
   navigator.serviceWorker.register("worker.js")
   .then(function (reg) {
     if (window.Notification.permission === "denied") {
