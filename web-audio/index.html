@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Audio API</title>
+</head>
+<body>
+	<h1>Web Audio API でマイク入力を扱うサンプル</h1>
+	<p>Promise や Arrow Functions 等 ES6 の機能を使っているため、モダンなブラウザでしか動きません。</p>
+
+	<button id="mic">Mic ON/OFF</button>
+	<p>
+		VOLUME:
+		<input id="volume" type="range" min="0" max="100" value="100">
+	</p>
+
+	<div>
+		<canvas id="level-meter"></canvas>
+	</div>
+
+	<script src="getUserMedia.js"></script>
+	<script src="audio.js"></script>
+</body>
+</html>
