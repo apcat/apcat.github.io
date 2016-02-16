@@ -9,8 +9,9 @@
 var mic = {};
 
 (_ => {
-  if (location.protocol !== "https:") {
-    location.protocol = "https:";
+  // http -> https redirect
+  if (location.hostname !== "localhost" && location.protocol === "http:") {
+    location.assign("https" + location.href.slice(4));
     return;
   }
 
@@ -26,6 +27,11 @@ var mic = {};
     navigator.mediaDevices.getUserMedia({audio: true})
     .then(stream => {
       mic.stream = stream;
+
+      // for Firefox
+      if (! stream.active) {
+        stream.active = true;
+      }
 
       // マルチトラック対応
       var audioTracks = stream.getAudioTracks();
@@ -48,6 +54,7 @@ var mic = {};
       });
 
       var source = context.createMediaStreamSource(stream);
+      mic.source = source;
       source.connect(gainNode);
     })
     .catch(err => {
@@ -60,6 +67,11 @@ var mic = {};
     mic.stream.getAudioTracks().forEach(track => {
       track.stop();
     });
+
+    // for Firefox
+    if (mic.stream.active) {
+      mic.stream.active = false;
+    }
   };
 
   addEventListener("load", _ => {

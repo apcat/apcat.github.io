@@ -3,8 +3,9 @@
  */
 
 $(function () {
-  if (location.protocol !== "https:") {
-    location.protocol = "https:";
+  // http -> https redirect
+  if (location.hostname !== "localhost" && location.protocol === "http:") {
+    location.assign("https" + location.href.slice(4));
     return;
   }
 
